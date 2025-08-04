@@ -270,7 +270,6 @@ function editStory(id) {
   document.getElementById("titleInput").value = story.title;
   document.getElementById("contentInput").value = story.content;
   document.getElementById("tagsInput").value = story.tags.join(", ");
-  document.getElementById("favoriteInput").checked = story.favorite;
 
   storyDetail.classList.add("hidden");
   storyForm.classList.remove("hidden");
