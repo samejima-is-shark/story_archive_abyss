@@ -55,11 +55,15 @@
         <option value="証">
         <option value="謝罪">
       </datalist>
-      <label><input type="checkbox" id="favoriteInput" />お気に入り</label>
       <input type="text" id="tagsInput3" list="secret" placeholder="secret" />
       <datalist id="secret">
         <option value="secret">
       </datalist>
+      <label class="favorite-toggle">
+        <input type="checkbox" id="favoriteInput" />
+        <span class="toggle-slider"></span>
+        <span class="toggle-label">お気に入り</span>
+      </label>
       <div class="story_save">
         <button id="saveBtn">保存</button>
         <button id="cancelBtn">キャンセル</button>
