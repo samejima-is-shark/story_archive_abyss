@@ -50,8 +50,7 @@ document.getElementById("saveBtn").addEventListener("click", () => {
   const tags1 = document.getElementById("tagsInput1").value;
   const tags2 = document.getElementById("tagsInput2").value;
   const tags3 = document.getElementById("tagsInput3").value;
-  const favorite = document.getElementById("favoriteInput") = 
-  story.favorite;
+  const favorite = document.getElementById("favoriteInput").checked;
 
   // 2つのタグ欄の内容を結合して、配列化・空要素除去
   const tags = [...tags1.split(/[,\s]+/), ...tags2.split(/[,\s]+/), ...tags3.split(/[,\s]+/)]
@@ -271,6 +270,7 @@ function editStory(id) {
   document.getElementById("titleInput").value = story.title;
   document.getElementById("contentInput").value = story.content;
   document.getElementById("tagsInput").value = story.tags.join(", ");
+  document.getElementById("favoriteInput").checked = story.favorite;
 
   storyDetail.classList.add("hidden");
   storyForm.classList.remove("hidden");
