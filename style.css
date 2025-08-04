@@ -193,6 +193,53 @@ i {
   opacity: 0;
 }
 
+/* お気に入りトグル用 */
+.favorite-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.favorite-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-slider {
+  width: 2.5rem;
+  height: 1.3rem;
+  background-color: #444;
+  border-radius: 9999px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  top: 0.1rem;
+  left: 0.1rem;
+  transition: transform 0.3s ease;
+}
+
+.favorite-toggle input:checked + .toggle-slider {
+  background-color: #facc15; /* 黄色っぽいゴールド */
+}
+
+.favorite-toggle input:checked + .toggle-slider::before {
+  transform: translateX(1.2rem);
+}
+
+.toggle-label {
+  color: #e0e0e0;
+}
+
 @media (max-width: 768px) {
 
   .story-card {
