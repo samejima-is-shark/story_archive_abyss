@@ -203,6 +203,7 @@ function showDetail(story) {
 
   storyDetail.innerHTML = `
     <h2>${story.title}</h2>
+    <button id="closeDetailBtn"><i class="fa-solid fa-xmark"></i> 閉じる</button>
     <p>${story.content.replace(/\n/g, "<br>")}</p>
     <div class="tags">${story.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}</div>
     <div class="detail-buttons">
@@ -217,11 +218,13 @@ function showDetail(story) {
       h2.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
-  document.getElementById("closeDetailBtn").addEventListener("click", () => {
-    storyDetail.classList.add("hidden");
-    storyList.classList.remove("hidden");
-
-    window.scrollTo({ top: lastScrollY, behavior: "auto" });
+  const closeButtons = storyDetail.querySelectorAll("#closeDetailBtn");
+  closeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      storyDetail.classList.add("hidden");
+      storyList.classList.remove("hidden");
+      window.scrollTo({ top: lastScrollY, behavior: "auto" });
+    });
   });
 
   if (index > 0) {
