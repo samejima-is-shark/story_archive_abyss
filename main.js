@@ -202,8 +202,10 @@ function showDetail(story) {
   //window.scrollTo({ top: 0, behavior: "smooth" });
 
   storyDetail.innerHTML = `
-    <h2>${story.title}</h2>
-    <button id="closeDetailBtn"><i class="fa-solid fa-xmark"></i> ×</button>
+    <div class="detail-buttons">
+      <h2>${story.title}</h2>
+      <button id="closeDetailBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
     <p>${story.content.replace(/\n/g, "<br>")}</p>
     <div class="tags">${story.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}</div>
     <div class="detail-buttons">
